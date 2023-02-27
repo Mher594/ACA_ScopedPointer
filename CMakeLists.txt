@@ -8,16 +8,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 enable_testing()
 
-add_executable(scoped-pointer 
-  ScopedPointer.h ScopedPointer.cpp)
-
 find_package(GTest REQUIRED)
 
-#add_executable(scoped-pointer-test ScopedPointerTest.cpp)
+add_executable(scoped-pointer-test
+  ScopedPointer.h ScopedPointerTest.cpp)
 
-#target_link_libraries(scoped-pointer-test
-# PRIVATE
-#  GTest::GTest
-#  scoped-pointer)
+target_link_libraries(scoped-pointer-test
+ PRIVATE
+  GTest::GTest)
 
-#add_test(scoped-pointer-gtest scoped-pointer-test)
+add_test(scoped-pointer-gtest scoped-pointer-test)
